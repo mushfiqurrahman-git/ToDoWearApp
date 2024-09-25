@@ -17,7 +17,9 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.todowearapp.R;
 import com.example.todowearapp.databinding.ActivityMainBinding;
 import com.example.todowearapp.model.Task;
-
+import com.example.todowearapp.utils.Constants;
+import com.example.todowearapp.utils.TaskUtils;
+import com.example.todowearapp.utils.ConfirmUtils;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding mainBinding;
@@ -68,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
     }
     private void updateTask(Task task,int action){
         if(action == Constants.ACTION_ADD){
-            TaskUtils.savgeTask(task,this);
-            ConfirmUtils.showSaveMessage(getString(R.string.task_saved),this);
+            TaskUtils.saveTask(task,this);
+            ConfirmUtils.showSavedMessage(getString(R.string.task_saved),this);
         }
     }
 
